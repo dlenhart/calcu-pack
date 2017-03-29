@@ -12,29 +12,29 @@ var answerOne = "#answerPop";
 var answer, costOut, ansOut, taxOut, cost, tax, finalAnswer, finalCost, finalPayment;
 
 function calc_sales() {
-	cost = document.getElementById('price');
-	tax = document.getElementById('tax');
-	
-	/*Form validation  **Checks to see if fields are empty, or if anything other than numbers is entered
-	Returns a pop up if incorrect*/
-	
-	if (isNaN(cost.value)) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	if (isNaN(tax.value)) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	if (cost.value === "" || cost.value === null) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	if (tax.value === "" || tax.value === null) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	/*End Form validation---------------------------------------------------------*/
+    cost = document.getElementById('price');
+    tax = document.getElementById('tax');
+
+    /*Form validation  **Checks to see if fields are empty, or if anything other than numbers is entered
+    Returns a pop up if incorrect*/
+
+    if (isNaN(cost.value)) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    if (isNaN(tax.value)) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    if (cost.value === "" || cost.value === null) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    if (tax.value === "" || tax.value === null) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    /*End Form validation---------------------------------------------------------*/
 
     costOut = parseFloat(cost.value);
     answer = costOut * (tax.value / 100);

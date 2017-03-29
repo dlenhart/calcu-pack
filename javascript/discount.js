@@ -11,40 +11,40 @@ var answerOne3 = "#answerPop3";
 var andPri, ansDis, ansPri, andSal, ansFin, ansFin2, finalSavings, finalBeforeTax, finalTax, finalAfter;
 
 function discount() {
-	var orPrice = document.getElementById('orPrice');
-	var orSales = document.getElementById('taxTwo');
-	var xDisc = disCo.options[disCo.options.selectedIndex].value;
-	
-	/*Form validation  **Checks to see if fields are empty, or if anything other than numbers is entered
-	Returns a pop up if incorrect*/
-	
-	if (isNaN(orPrice.value)) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	if (isNaN(orSales.value)) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
+    var orPrice = document.getElementById('orPrice');
+    var orSales = document.getElementById('taxTwo');
+    var xDisc = disCo.options[disCo.options.selectedIndex].value;
 
-	if (orPrice.value === "" || orPrice.value === null) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	
-	if (orSales.value === "" || orSales.value === null) {
-		$.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
-		return false;
-	}
-	/*End Form validation---------------------------------------------------------*/
+    /*Form validation  **Checks to see if fields are empty, or if anything other than numbers is entered
+    Returns a pop up if incorrect*/
 
-	andPri = parseFloat(orPrice.value);
-	ansDis = andPri * xDisc;
-	
-	ansPri = andPri - ansDis; // Final Price after discount 
-	andSal = parseFloat(orSales.value);  //Parse to integer for the Sales tax.
-	
-	ansFin = ansPri * (andSal / 100);
+    if (isNaN(orPrice.value)) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    if (isNaN(orSales.value)) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+
+    if (orPrice.value === "" || orPrice.value === null) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+
+    if (orSales.value === "" || orSales.value === null) {
+        $.mobile.changePage(invalidPop, { allowSamePageTransition: true, transition: "fade" });
+        return false;
+    }
+    /*End Form validation---------------------------------------------------------*/
+
+    andPri = parseFloat(orPrice.value);
+    ansDis = andPri * xDisc;
+
+    ansPri = andPri - ansDis; // Final Price after discount 
+    andSal = parseFloat(orSales.value);  //Parse to integer for the Sales tax.
+
+    ansFin = ansPri * (andSal / 100);
     ansFin2 = ansPri + ansFin;
 
     finalSavings = Math.round(ansDis * 100) / 100;
