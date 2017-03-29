@@ -36,46 +36,46 @@ function calc_sales() {
 	}
 	/*End Form validation---------------------------------------------------------*/
 
-	costOut = parseFloat(cost.value);
+    costOut = parseFloat(cost.value);
     answer = costOut * (tax.value / 100);
-	ansOut = costOut + answer;
+    ansOut = costOut + answer;
 
-	finalAnswer = Math.round(answer * 100) / 100;
+    finalAnswer = Math.round(answer * 100) / 100;
     finalCost = Math.round(cost.value * 100) / 100;
     finalPayment = Math.round(ansOut * 100) / 100;
-    
+
     $("#answer").html("Total Tax: $" + finalAnswer);
     $("#answer3").html("Orig cost: $" + finalCost);
     $("#answer2").html("Total Payment: $" + finalPayment);
 
-	$.mobile.changePage(answerOne, { allowSamePageTransition: true, transition: "fade" });
+    $.mobile.changePage(answerOne, { allowSamePageTransition: true, transition: "fade" });
 
     return false;
 }
 
 
 function resetPage() {
-	document.getElementById('answer').innerHTML = "";
-	document.getElementById('answer2').innerHTML = "";
-	//resets the value of the text boxes.
-	document.getElementById('price').value = "";
-	document.getElementById('tax').value = "";
-	
-	answer = null;
-	costOut = null;
-	ansOut = null;
-	taxOut = null;
+    document.getElementById('answer').innerHTML = "";
+    document.getElementById('answer2').innerHTML = "";
+    //resets the value of the text boxes.
+    document.getElementById('price').value = "";
+    document.getElementById('tax').value = "";
+    
+    answer = null;
+    costOut = null;
+    ansOut = null;
+    taxOut = null;
     finalAnswer = null;
     finalCost = null;
     finalPayment = null;
-	
-	var myState = $("select#state");
+
+    var myState = $("select#state");
     myState[0].selectedIndex = 0;
     myState.selectmenu("refresh");
-    
+
     $("#recent_calc").html("");
-                           
-	return false;
+
+    return false;
 }
 
 //State selector values - Populates the text box with tax rate jquery

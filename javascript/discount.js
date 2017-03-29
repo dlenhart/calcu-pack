@@ -46,52 +46,51 @@ function discount() {
 	
 	ansFin = ansPri * (andSal / 100);
     ansFin2 = ansPri + ansFin;
-    
+
     finalSavings = Math.round(ansDis * 100) / 100;
     finalBeforeTax = Math.round(ansPri * 100) / 100;
     finalTax = Math.round(ansFin * 100) / 100;
     finalAfter = Math.round(ansFin2 * 100) / 100;
-    
+
     $("#ansDiscount").html("You save: $" + finalSavings);
     $("#ansDiscount2").html("Before Tax: $" + finalBeforeTax);
     $("#ansDiscount3").html("Tax: $" + finalTax);
     $("#ansDiscount4").html("After Tax: $" + finalAfter);
-    
+
     $.mobile.changePage(answerOne3, { allowSamePageTransition: true, transition: "fade" });
 
-	return false;
+    return false;
 }
 
 
 function resetDisc() {
-	document.getElementById('ansDiscount').innerHTML = "";
-	document.getElementById('ansDiscount2').innerHTML = "";
-	//resets the value of the text boxes.
-	document.getElementById('orPrice').value = "";
-	document.getElementById('taxTwo').value = "";
-	
-	var myselect = $("select#disCo");
+    document.getElementById('ansDiscount').innerHTML = "";
+    document.getElementById('ansDiscount2').innerHTML = "";
+    //resets the value of the text boxes.
+    document.getElementById('orPrice').value = "";
+    document.getElementById('taxTwo').value = "";
+
+    var myselect = $("select#disCo");
     myselect[0].selectedIndex = 0;
     myselect.selectmenu("refresh");
-	
-	var myStater = $("select#state2");
+
+    var myStater = $("select#state2");
     myStater[0].selectedIndex = 0;
     myStater.selectmenu("refresh");
-	
-	andPri = null;
-	ansDis = null;
-	ansPri = null;
-	andSal = null;
-	ansFin = null;
-	ansFin2 = null;
+
+    andPri = null;
+    ansDis = null;
+    ansPri = null;
+    andSal = null;
+    ansFin = null;
+    ansFin2 = null;
     finalSavings = null;
     finalBeforeTax = null;
     finalTax = null;
     finalAfter = null;
-    
     $("#disc_disc").html("");
-	
-	return false;
+
+    return false;
 }
 
 $(document).ready(function () {
@@ -101,7 +100,6 @@ $(document).ready(function () {
     }).attr('selected', true);
 
     $("#state2").on("change", function () {
-
         $("#taxTwo").val($(this).find("option:selected").attr("value"));
     });
     

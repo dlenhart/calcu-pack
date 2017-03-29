@@ -2,7 +2,9 @@ Calcu Pack
 ===============
 
 -Sales Tax Calculator
+
 -Tip Calculator
+
 -Discount Calculator
 
 Committing old code that has never been in source control.  Code was originally written circa 2012-2013 as an HTML5/Cordova application for Android.  Last updated January 2016 to utilize Boostrap CSS.  This is the browser version and doesn't include the Android project.
